@@ -1,0 +1,31 @@
+body {
+    background-color: #EEEEEE;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 13px;
+    color: #666666;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* Gridster styles */
+
+.gridster {
+    margin: 0 auto;
+    margin-bottom:30px;
+
+    -webkit-transition: opacity .6s;
+    -moz-transition: opacity .6s;
+    -o-transition: opacity .6s;
+    -ms-transition: opacity .6s;
+    transition: opacity .6s;
+}
+
+.gridster .gs_w {
+    background: #FFF;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
