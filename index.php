@@ -85,7 +85,7 @@
 					<h4>Interfaces</h4>
 					<pre><?php system("ip link show | grep 'eth\|wlan' | awk '{print $1,$2}'"); ?></pre>
 					<h4>IP addresses</h4>
-					<pre><?php system("ip a | grep 'eth\|wlan\|tun' | awk '{print $1,$2}'"); ?></pre>
+					<pre><?php system("ip a | grep 'eth\|wlan' | awk '{print $1,$2}'"); ?></pre>
                         	</div>
                         	<!-- /widget-content -->
 			</li>
@@ -100,11 +100,11 @@
                         	<div class="widget-content">
 					<div id="big_stats">
 						<div class="stat"><h2>Transmitted</h2></br>
-							<span class="value"><?php $bytes = system("cat /sys/class/net/eth0/statistics/tx_bytes");$result = ($bytes / 1024) / 1024;echo "/ " . substr($result,0,4) . " MB"; ?></span> 
+							<span class="value"><?php system("/sbin/ifconfig eth0 | grep 'TX bytes' | awk '{print $7,$8}'"); ?></span> 
 						</div>
 						<!-- .stat -->
-						<div class="stat"> <h2>Recieved</h2></br>
-							<span class="value"><?php $bytes = system("cat /sys/class/net/eth0/statistics/rx_bytes");$result = ($bytes / 1024) / 1024;echo "/ " . substr($result,0,4) . " MB"; ?> </span>
+						<div class="stat"><h2>Recieved</h2></br>
+							<span class="value"><?php system("/sbin/ifconfig eth0 | grep 'RX bytes' | awk '{print $3,$4}'"); ?></span>
 						</div>
 						<!-- .stat -->
 					</div>
