@@ -33,9 +33,12 @@
 	 
     var grid_canvas = $(".gridster > ul").gridster({
 		widget_margins: [4, 4],
-        widget_base_dimensions: [385, 210],
+        widget_base_dimensions: [385, 200],
 	min_cols: 3,
 	min_rows: 5,
+	resize: {
+        enabled:true
+    },
         
 		// serialize_params: function($w, wgd) { return { id: $($w).attr('id'),col: wgd.col, row: wgd.row,size_x: wgd.size_x,size_y: wgd.size_y }
 		// A function to return serialized data for each each widget, used when calling the serialize method. Two arguments are passed: 

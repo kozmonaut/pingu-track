@@ -5,6 +5,7 @@
     <title>Pingu-Track | Light Linux Monitor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
@@ -35,10 +36,10 @@
 							</button>
 						</a>
 							<button class="btn btn-warning">
-							<li class="dropdown"><i class="icon-time"></i> System time: <?php system("/bin/date"); ?></li>
+							<li class="dropdown"><i class="icon-time"></i> <b>Time:</b> <?php system("/bin/date"); ?></li>
 							</button>
 							<button class="btn btn-success">
-							<li class="dropdown"><i class="icon-user"></i> Logged as: <?php system("users | awk '{print $1}'"); ?></li>
+							<li class="dropdown"><i class="icon-user"></i> <b>Logged as:</b> <?php system("users | awk '{print $1}'"); ?></li>
 							</button>
                     </ul>
                 </div>
@@ -58,23 +59,25 @@
 				<ul>
 					<!-- SYSTEM WIDGET -->
 					<li class="widget" data-row="1" data-col="1" data-sizex="1" data-sizey="2">
-						<div class="widget-header">
+						<div class="widget-header" style="background-color:#4BD9DB">
                                 <i class="icon-info-sign"></i>
                                 <h3>System</h3>
                         </div>
                         <!-- /widget-header -->
                         <div class="widget-content">
-                            <h4>System hostname</h4><?php system("hostname"); ?>
+                            
 							<h4>Architecture</h4><?php system("uname -m"); ?>
                             <h4>Kernel version</h4><?php system("uname -v -r"); ?>
 							<h4>Processor</h4><?php system("cat /proc/cpuinfo | grep \"name\" | cut -d : -f2 | uniq"); ?>
 							<h4>Operating system</h4><?php system("cat /etc/*-release | grep \"PRETTY_NAME\" | cut -d \"=\" -f2 | uniq"); ?>
+       <h4>System hostname</h4><?php system("hostname"); ?>
+                        
                         </div>
                         <!-- /widget-content -->
 					</li>
 					
 					<!-- NETWORK WIDGET -->
-					<li class="widget" data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+					<li class="widget" data-row="2" data-col="3" data-sizex="1" data-sizey="2">
 						<div class="widget-header" style="background-color:#A81CBA;">
 							<i class="icon-signal"></i>
 							<h3>Network</h3>
@@ -82,15 +85,15 @@
 						<!-- /widget-header -->
                         <div class="widget-content">
 							<h4>Interfaces</h4>
-							<div style="width:240px;"><?php system("ip link show | grep 'eth\|wlan\|tun' | awk '{print $1,$2}'"); ?></div>
+							<pre><?php system("ip link show | grep 'eth\|wlan' | awk '{print $1,$2}'"); ?></pre>
 							<h4>IP addresses</h4>
-							<div style="width:280px;"><?php system("ip a | grep 'eth\|wlan' | awk 'NR=2 {print $2}'"); ?></div>
+							<pre><?php system("ip a | grep 'eth\|wlan\|tun' | awk '{print $1,$2}'"); ?></pre>
                         </div>
                         <!-- /widget-content -->
 					</li>
 					
 					<!-- BANDWIDTH WIDGET -->
-					<li class="widget" data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+					<li class="widget" data-row="4" data-col="2" data-sizex="1" data-sizey="1">
 						<div class="widget-header">
 							<i class="icon-download"></i>
                             <h3>Bandwidth(eth0)</h3>
@@ -99,11 +102,11 @@
                         <div class="widget-content">
 							<div id="big_stats">
 								<div class="stat"><h2>Transmitted</h2></br>
-									<span class="value"><?php $bytes = system("cat /sys/class/net/eth0/statistics/tx_bytes");$result = $bytes / 1024;echo "/ " . substr($result,0,6) . " kB"; ?></span> 
+									<span class="value"><?php $bytes = system("cat /sys/class/net/eth0/statistics/tx_bytes");$result = ($bytes / 1024) / 1024;echo "/ " . substr($result,0,4) . " MB"; ?></span> 
 								</div>
 								<!-- .stat -->
 								<div class="stat"> <h2>Recieved</h2></br>
-									<span class="value"><?php $bytes = system("cat /sys/class/net/eth0/statistics/rx_bytes");$result = $bytes / 1024;echo "/ " . substr($result,0,6) . " kB"; ?> </span>
+									<span class="value"><?php $bytes = system("cat /sys/class/net/eth0/statistics/rx_bytes");$result = ($bytes / 1024) / 1024;echo "/ " . substr($result,0,4) . " MB"; ?> </span>
 								</div>
 								<!-- .stat -->
 							</div>
@@ -111,21 +114,21 @@
                         <!-- /widget-content -->
 					</li>
 
-					<!-- LAST 3 PINGS WIDGET -->
-					<li class="widget" data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+					<!-- LAST 5 PINGS WIDGET -->
+					<li class="widget" data-row="3" data-col="1" data-sizex="1" data-sizey="1">
 						<div class="widget-header">
                             <i class="icon-flag"></i>
-                            <h3>Last 3 Pings</h3>
+                            <h3>Last 5 Pings</h3>
                         </div>
                         <!-- /widget-header -->
                         <div class="widget-content">
-							<pre><?php system("ping -c 5 127.0.0.1 | head -6 | awk '{print $1,$2,$3,$4,$7,$8,$9,$10}'"); ?></pre>
+							<pre><?php system("ping -c 5 google.com | head -n 6 | awk '{print $3,$4,$8,$9,$10}'"); ?></pre>
                         </div>
                         <!-- /widget-content -->
 					</li>
 
 					<!-- FAST STATS WIDGET -->
-					<li class="widget" data-row="2" data-col="2" data-sizex="2" data-sizey="1">
+					<li class="widget" data-row="1" data-col="2" data-sizex="2" data-sizey="1">
 						<div class="widget-header">
                             <i class="icon-list"></i>
                             <h3>Fast Stats</h3>
@@ -139,7 +142,7 @@
 								<!-- .stat -->
 								<div class="stat"> <i class="icon-adjust"></i> Memory used <h3><?php system("free -m | awk 'NR==2{print $3}'"); ?> MB</h3></div>
 								<!-- .stat -->
-								<div class="stat"> <i class="icon-bullhorn"></i> Ping(nsn-intra.net) <h3><?php $output = shell_exec("ping -c 1 127.0.0.1 | tail -1| awk '{print $4}' | cut -d '=' -f 3"); $result = substr($output,0,6); echo $result . "ms"; ?></h3></div>
+								<div class="stat"> <i class="icon-bullhorn"></i> Ping (google.com) <h3><?php $output = shell_exec("ping -c 1 google.com | tail -1| awk '{print $4}' | cut -d '=' -f 3"); $result = substr($output,0,6); echo $result . "ms"; ?></h3></div>
 								<!-- .stat --> 
 							</div>
                         </div>
@@ -147,20 +150,20 @@
 					</li>
 					
 					<!-- DISKS WIDGET -->
-					<li class="widget" data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+					<li class="widget" data-row="3" data-col="2" data-sizex="1" data-sizey="1">
 						<div class="widget-header" style="background-color:#1B88E0">
 							<i class="icon-folder-open"></i>
-							<h3>Available space(MB)</h3>
+							<h3>Disk space(GB)</h3>
 						</div>
 						<!-- /widget-header -->
 						<div class="widget-content">
-							<pre><?php system("df -m| tail -5 | awk '{print $1,$4}'"); ?></pre>
+							<pre><?php system("df -BG | head -n 5 | awk '{print $1,$3,$4}'"); ?></pre>
 						</div>
                     <!-- /widget-content -->
 					</li>
 
 					<!-- MEMORY WIDGET -->
-					<li class="widget" data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+					<li class="widget" data-row="4" data-col="1" data-sizex="1" data-sizey="1">
 						<div class="widget-header" style="background-color:#E35D5D">
                             <i class="icon-bar-chart"></i>
                             <h3>Memory</h3>
@@ -177,6 +180,30 @@
 							</div>
                         </div>
                         <!-- /widget-content -->
+                        
+           <!-- PROCESSES USAGE -->
+					<li class="widget" data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+						<div class="widget-header" style="background-color:#E35D5D">
+                            <i class="icon-bar-chart"></i>
+                            <h3>Process Usage</h3>
+						</div>
+                        <!-- /widget-header -->
+                        <div class="widget-content">
+																								<pre><?php system("ps aux | awk '{print $2, $3, $4, $11}' | head -1 && ps axu | awk '{print $2, $3, $4, $11}' | sort -k3 -nr | head -5"); ?></pre>
+                        </div>
+                        <!-- /widget-content --> 
+                         
+         <!-- LAST LOGGED IN -->
+					<li class="widget" data-row="4" data-col="3" data-sizex="1" data-sizey="1">
+						<div class="widget-header" style="background-color:#E35D5D">
+                            <i class="icon-bar-chart"></i>
+                            <h3>Last Logged In</h3>
+						</div>
+                        <!-- /widget-header -->
+                        <div class="widget-content">
+																								 <pre><?php system("last | awk '{print $1,$4,$5,$6,$7}' | head -n 6"); ?></pre>   
+                        </div>
+                        <!-- /widget-content -->                       
 					</li>
 				</ul> 
 				<!-- /gridster -->

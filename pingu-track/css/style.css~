@@ -266,8 +266,6 @@ h5 {
 
 .main {
 	padding-bottom: 2em;
-	
-	border-bottom: 1px solid #000;
 }
 
 
@@ -325,7 +323,7 @@ h5 {
 }
 
 .footer-inner {
-	padding: 10px 0;
+	padding: 5px 0;
 	float:left;
 	font-size: 14px;
 	background: #111;
@@ -408,14 +406,9 @@ h5 {
 
 .widget-content {
 	padding: 20px 15px 15px;
-	
+
 	background: #FFF;
-	
-	
-	
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+
 }
 
 .widget-header+.widget-content {
