@@ -2,7 +2,7 @@ pingu-track
 ===========
 Light Linux Monitor in combination with HTML+PHP+JS.
 
-![Alt text](/kozmonaut/pingu-track/master/img/pingu-track-screenshot.png "pingu-track screenshot")
+![Alt text](https://github.com/kozmonaut/pingu-track/master/img/pingu-track-screenshot.png "pingu-track screenshot")
 
 Currently included widgets:
 * System information
