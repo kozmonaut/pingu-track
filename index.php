@@ -20,6 +20,14 @@
   <link rel="stylesheet" type="text/css" href="gridster/css/jquery.gridster.css">
   <link rel="stylesheet" type="text/css" href="gridster/css/styles.css">
   
+  <!-- Reset local storage -->
+  <script type="text/javascript">
+	function reset(){
+	localStorage.clear();
+	window.location.reload();
+	}
+  </script>
+  
 </head>
 <body>
     <div class="navbar navbar-fixed-top">
@@ -52,7 +60,7 @@
                <div class="gridster">
 		<ul>
 			<!-- SYSTEM WIDGET -->
-			<li class="widget" data-row="1" data-col="1" data-sizex="1" data-sizey="2">
+			<li id="li1" class="widget" data-row="1" data-col="1" data-sizex="1" data-sizey="2">
 				<div class="widget-header" style="background-color:#4BD9DB">
                     <i class="icon-info-sign"></i><h3>System</h3>
                 </div>
@@ -68,7 +76,7 @@
 			</li>
 					
 			<!-- NETWORK WIDGET -->
-			<li class="widget" data-row="2" data-col="3" data-sizex="1" data-sizey="2">
+			<li id="li2" class="widget" data-row="2" data-col="3" data-sizex="1" data-sizey="2">
 				<div class="widget-header" style="background-color:#A81CBA;">
 					<i class="icon-signal"></i><h3>Network</h3>
 				</div>
@@ -83,7 +91,7 @@
 			</li>
 					
 			<!-- BANDWIDTH WIDGET -->
-			<li class="widget" data-row="4" data-col="2" data-sizex="1" data-sizey="1">
+			<li id="li3" class="widget" data-row="4" data-col="2" data-sizex="1" data-sizey="1">
 				<div class="widget-header">
 					<i class="icon-download"></i><h3>Bandwidth(eth0)</h3>
                 </div>
@@ -104,7 +112,7 @@
 			</li>
 
 			<!-- LAST 5 PINGS WIDGET -->
-			<li class="widget" data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+			<li id="li4" class="widget" data-row="3" data-col="1" data-sizex="1" data-sizey="1">
 				<div class="widget-header">
                     <i class="icon-flag"></i><h3>Last 5 Pings</h3>
                 </div>
@@ -116,7 +124,7 @@
 			</li>
 			
 			<!-- FAST STATS WIDGET -->
-			<li class="widget" data-row="1" data-col="2" data-sizex="2" data-sizey="1">
+			<li id="li5" class="widget" data-row="1" data-col="2" data-sizex="2" data-sizey="1">
 				<div class="widget-header">
                     <i class="icon-list"></i><h3>Fast Stats</h3>
                 </div>
@@ -137,7 +145,7 @@
 			</li>
 					
 			<!-- DISKS WIDGET -->
-			<li class="widget" data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+			<li id="li6" class="widget" data-row="3" data-col="2" data-sizex="1" data-sizey="1">
 				<div class="widget-header" style="background-color:#1B88E0">
 					<i class="icon-folder-open"></i><h3>Disk space(GB)</h3>
 				</div>
@@ -149,7 +157,7 @@
 			</li>
 
 			<!-- MEMORY WIDGET -->
-			<li class="widget" data-row="4" data-col="1" data-sizex="1" data-sizey="1">
+			<li id="li7" class="widget" data-row="4" data-col="1" data-sizex="1" data-sizey="1">
 				<div class="widget-header" style="background-color:#E35D5D">
                     <i class="icon-bar-chart"></i><h3>Memory</h3>
 				</div>
@@ -168,7 +176,7 @@
             </li>
                         
         	<!-- PROCESSES USAGE -->
-			<li class="widget" data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+			<li id="li8" class="widget" data-row="2" data-col="2" data-sizex="1" data-sizey="1">
 				<div class="widget-header" style="background-color:#E35D5D">
                     <i class="icon-bar-chart"></i><h3>Process Usage</h3>
 				</div>
@@ -180,7 +188,7 @@
             </li>
                          
         	<!-- LAST LOGGED IN -->
-			<li class="widget" data-row="4" data-col="3" data-sizex="1" data-sizey="1">
+			<li id="li9" class="widget" data-row="4" data-col="3" data-sizex="1" data-sizey="1">
 				<div class="widget-header" style="background-color:#E35D5D">
                     <i class="icon-bar-chart"></i><h3>Last Logged In</h3>
 				</div>
