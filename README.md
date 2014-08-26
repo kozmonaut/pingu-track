@@ -1,6 +1,6 @@
 pingu-track
 ===========
-Light Linux Monitor in combination with HTML+PHP+JS.
+Light Linux Monitor dashboard in combination with HTML+PHP+JS.
 
 ![ScreenShot](/img/pingu-track-screenshot.png)
 
@@ -15,7 +15,7 @@ Currently included widgets:
 * Fast stats
 * Ping option
 
-More widgets and functionalities will be added over time.
+More widgets and functionalities will be added over time. Widgets are draggable.
 
 #Installation
 
