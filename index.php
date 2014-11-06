@@ -38,7 +38,7 @@
                 
 			<div class="nav-collapse">
                     <ul class="nav pull-right">
-                    				<button class="btn btn-default" onclick="reset()"><li class="dropdown">Reset</li></button>
+                    				<button class="btn btn-default" onclick="reset()"><li class="dropdown">Reset Layout</li></button>
 						<a href="Javascript:window.location.reload()">
 						<button class="btn btn-info"><li class="dropdown"><i class="icon-refresh"></i></li></button>
 						</a>
