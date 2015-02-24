@@ -68,7 +68,7 @@
                             <div class="widget-header" style="background-color:#4BD9DB">
                                 <i class="icon-info-sign"></i>
                                 <h3>System</h3>
-                                <button type="button" class="close" onclick="$('#li2').hide()">&times;</button>
+                                <button type="button" class="close" onclick="$('#li1').hide()">&times;</button>
                             </div>
                             <!-- /widget-header -->
                             <div class="widget-content">
@@ -106,7 +106,7 @@
                             <div class="widget-header">
                                 <i class="icon-download"></i>
                                 <h3>Bandwidth(eth0)</h3>
-                                <button type="button" class="close" onclick="$('#li2').hide()">&times;</button>
+                                <button type="button" class="close" onclick="$('#li3').hide()">&times;</button>
                             </div>
                             <!-- /widget-header -->
                             <div class="widget-content">
@@ -132,7 +132,7 @@
                             <div class="widget-header">
                                 <i class="icon-flag"></i>
                                 <h3>Last 5 Pings</h3>
-                                <button type="button" class="close" onclick="$('#li2').hide()">&times;</button>
+                                <button type="button" class="close" onclick="$('#li4').hide()">&times;</button>
                             </div>
                             <!-- /widget-header -->
                             <div class="widget-content">
@@ -145,7 +145,7 @@
                             <div class="widget-header">
                                 <i class="icon-list"></i>
                                 <h3>Fast Stats</h3>
-                                <button type="button" class="close" onclick="$('#li2').hide()">&times;</button>
+                                <button type="button" class="close" onclick="$('#li5').hide()">&times;</button>
                             </div>
                             <!-- /widget-header -->
                             <div class="widget-content">
@@ -179,7 +179,7 @@
                             <div class="widget-header" style="background-color:#1B88E0">
                                 <i class="icon-folder-open"></i>
                                 <h3>Disk space(GB)</h3>
-                                <button type="button" class="close" onclick="$('#li2').hide()">&times;</button>
+                                <button type="button" class="close" onclick="$('#li6').hide()">&times;</button>
                             </div>
                             <!-- /widget-header -->
                             <div class="widget-content">
@@ -192,7 +192,7 @@
                             <div class="widget-header" style="background-color:#E35D5D">
                                 <i class="icon-bar-chart"></i>
                                 <h3>Memory</h3>
-                                <button type="button" class="close" onclick="$('#li2').hide()">&times;</button>
+                                <button type="button" class="close" onclick="$('#li7').hide()">&times;</button>
                             </div>
                             <!-- /widget-header -->
                             <div class="widget-content">
@@ -221,7 +221,7 @@
                             <div class="widget-header" style="background-color:#E35D5D">
                                 <i class="icon-bar-chart"></i>
                                 <h3>Process Usage</h3>
-                                <button type="button" class="close" onclick="$('#li2').hide()">&times;</button>
+                                <button type="button" class="close" onclick="$('#li8').hide()">&times;</button>
                             </div>
                             <!-- /widget-header -->
                             <div class="widget-content">
@@ -234,7 +234,7 @@
                             <div class="widget-header" style="background-color:#E35D5D">
                                 <i class="icon-bar-chart"></i>
                                 <h3>Last Logged In</h3>
-                                <button type="button" class="close" onclick="$('#li2').hide()">&times;</button>
+                                <button type="button" class="close" onclick="$('#li9').hide()">&times;</button>
                             </div>
                             <!-- /widget-header -->
                             <div class="widget-content">
@@ -254,7 +254,7 @@
         <div class="footer">
             <div class="container">
                 <div class="span12">
-                    &copy; 2014 <a href="index.php">pingu-track | Light Linux Monitor</a> | <i class="icon-github"></i> <a href="http://www.github.com/kozmonaut/pingu-track">Fork at Github</a>
+                    &copy; 2015 <a href="index.php">pingu-track | Light Linux Monitor</a> | <i class="icon-github"></i> <a href="http://www.github.com/kozmonaut/pingu-track">Fork at Github</a>
                 </div>
             </div>
             <!-- /container -->
